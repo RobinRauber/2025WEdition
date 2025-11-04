@@ -16,4 +16,5 @@
  cd plot
  uv venv
  uv pip install -r requirements.txt
- uv run plot.py
+ uv run plot.py ../orwc_benchmark.csv
+ ```
