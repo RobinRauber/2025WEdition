@@ -10,9 +10,9 @@ ORWCBenchmark::~ORWCBenchmark() {
 
 void ORWCBenchmark::export_csv(const string& filename) const {
     ofstream file(filename);
-    file << "Iteration,Open,Read,Write,Close\n";
+    file << "Open,Read,Write,Close\n";
     for (int i = 0; i < this->num_runs; ++i) {
-        file << i << "," << orwc_ptr[i].get_open_time_ms() << "," << orwc_ptr[i].get_read_time_ms() << "," << orwc_ptr[i].get_write_time_ms() << "," << orwc_ptr[i].get_close_time_ms() << "\n";
+        file << orwc_ptr[i].get_open_time_ms() << "," << orwc_ptr[i].get_read_time_ms() << "," << orwc_ptr[i].get_write_time_ms() << "," << orwc_ptr[i].get_close_time_ms() << "\n";
     }
     file.close();
 }
